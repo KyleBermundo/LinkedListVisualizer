@@ -29,6 +29,9 @@
     <ClInclude Include="LinkedList.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\LinkedList.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
