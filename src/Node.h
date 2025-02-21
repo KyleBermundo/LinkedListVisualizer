@@ -14,4 +14,5 @@ public:
 
     Node(int value);//this is a constructor to initialize the node
     void update();//this updates the node's position for the animation
+    void draw();// Draw the node
 };

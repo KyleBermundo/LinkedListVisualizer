@@ -7,10 +7,10 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Node.cpp">
+    <ClCompile Include="src\LinkedList.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList.cpp">
+    <ClCompile Include="src\Node.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -23,13 +23,10 @@
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkedList.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\LinkedList.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Node.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
