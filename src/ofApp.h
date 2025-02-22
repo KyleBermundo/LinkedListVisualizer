@@ -21,6 +21,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 
-
+		LinkedList linkedList; // Linked list object
+		float cameraX; // Camera panning offset
 		
 };

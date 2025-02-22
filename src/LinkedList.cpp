@@ -1,6 +1,6 @@
 #include "LinkedList.h"
 
-
+//these notes are simplified from deepseek
 
 //from lecture and from these links on geeksforgeeks
 // https://www.geeksforgeeks.org/linked-list-data-structure/
@@ -14,13 +14,13 @@ void LinkedList::insertAtHead(int value) {
     Node* newNode = new Node(value);
     newNode->next = head;
     head = newNode;
-    if (!tail) tail = head;
+    if (!tail) tail = head; // If list was empty, set tail to head
 }
 
 void LinkedList::insertAtTail(int value) {
     Node* newNode = new Node(value);
     if (!head) {
-        head = tail = newNode;
+        head = tail = newNode; // If list is empty, set head and tail
     }
     else {
         tail->next = newNode;
@@ -29,16 +29,16 @@ void LinkedList::insertAtTail(int value) {
 }
 
 void LinkedList::deleteHead() {
-    if (!head) return;
+    if (!head) return; // If list is empty, do nothing
     Node* temp = head;
     head = head->next;
     delete temp;
-    if (!head) tail = nullptr;
+    if (!head) tail = nullptr; // If list is now empty, set tail to nullptr
 }
 
 void LinkedList::deleteTail() {
-    if (!head) return;
-    if (head == tail) {
+    if (!head) return; // If list is empty, do nothing
+    if (head == tail) { // If there's only one node
         delete head;
         head = tail = nullptr;
         return;
@@ -55,10 +55,9 @@ void LinkedList::deleteTail() {
 void LinkedList::draw() {
     Node* temp = head;
     while (temp) {
-        ofDrawCircle(temp->x, temp->y, temp->size);
-        ofDrawBitmapString(ofToString(temp->data), temp->x - 10, temp->y + 5);
+        temp->draw(); // Draw the node
         if (temp->next) {
-            ofDrawLine(temp->x, temp->y, temp->next->x, temp->next->y);
+            ofDrawLine(temp->x, temp->y, temp->next->x, temp->next->y); // Draw connection to next node
         }
         temp = temp->next;
     }
@@ -68,9 +67,17 @@ void LinkedList::update() {
     Node* temp = head;
     float offsetX = 0;
     while (temp) {
-        temp->x = offsetX;
-        temp->update();
-        offsetX += temp->size * 2;
+        temp->x = offsetX; // Position nodes horizontally
+        temp->update(); // Update node animation
+        offsetX += temp->size * 2; // Add spacing between nodes
+        temp = temp->next;
+    }
+}
+
+void LinkedList::adjustAmplitude(float delta) {
+    Node* temp = head;
+    while (temp) {
+        temp->amplitude += delta; // Adjust amplitude for each node
         temp = temp->next;
     }
 }

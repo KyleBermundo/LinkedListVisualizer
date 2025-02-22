@@ -5,7 +5,7 @@
 // https://www.geeksforgeeks.org/linked-list-data-structure/
 // https://www.geeksforgeeks.org/singly-linked-list-tutorial/
 
-//these notes are simplified from deepseek
+//Most notes are simplified from deepseek
 class LinkedList { //declares the linkedlist class and its members
 public:
     Node* head; //a pointer to the first node in the linked list
@@ -18,4 +18,5 @@ public:
     void deleteTail(); //this will delete the tail node
     void draw(); //this draws all nodes and connections on the screen
     void update(); //this updates all nodes for animation
+    void adjustAmplitude(float delta); // Adjust oscillation amplitude
 };
