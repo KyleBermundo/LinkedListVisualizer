@@ -56,8 +56,8 @@ void LinkedList::draw() {
     Node* temp = head;
     while (temp) {
         temp->draw(); // Draw the node
-        if (temp->next) {
-            ofDrawLine(temp->x, temp->y, temp->next->x, temp->next->y); // Draw connection to next node
+        if (temp->next) { //this part was made with the help of DEEPSEEK it was also mentioned in one of my push to origin.
+            ofDrawLine(temp->x, temp->y, temp->next->x, temp->next->y); // Draw connection to next node 
         }
         temp = temp->next;
     }
